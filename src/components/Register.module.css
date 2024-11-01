@@ -34,7 +34,7 @@ h1 {
   display: block;
   font-weight: bold;
   margin-bottom: 5px;
-  color: #555;
+  color: #555; /* Keep the color consistent with the other labels */
 }
 
 .inputGroup input {
@@ -48,6 +48,10 @@ h1 {
 
 .profileSection {
   text-align: center;
+}
+
+.profilePicContainer {
+  padding: 10px; /* Add padding to the profile picture container */
 }
 
 .profilePic {
@@ -84,9 +88,14 @@ h1 {
 }
 
 .orText {
-  margin: 10px 0; /* Add margin above and below the "or" text */
-  font-weight: bold; /* Make the "or" text bold for better visibility */
-  color: #555; /* Optional: Adjust the color for better contrast */
+  margin: 10px 0; /* Add margin to the or text */
+}
+
+.avatarLabel {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
 }
 
 .avatarOptions {
@@ -94,7 +103,7 @@ h1 {
   justify-content: center;
   gap: 10px;
   margin-top: 10px;
-  padding: 10px; /* Add padding around the avatar options */
+  padding: 10px;
 }
 
 .avatar {
@@ -106,7 +115,7 @@ h1 {
 }
 
 .avatar:hover {
-  transform: scale(1.1); /* Slightly scale up the avatar on hover */
+  transform: scale(1.1); /* Add hover effect for avatars */
 }
 
 .registerBtn {
@@ -127,7 +136,7 @@ h1 {
   transform: scale(1.05);
 }
 
-/* Responsive  */
+/* Responsive */
 @media (max-width: 768px) {
   .formSection {
     flex-direction: column;
@@ -171,4 +180,11 @@ h1 {
     font-size: 0.9rem;
     padding: 8px;
   }
+}
+
+.profileLabel {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
 }

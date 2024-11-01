@@ -19,7 +19,7 @@ function Login() {
 
     console.log("Login Data:", loginData);
 
-    navigate("/dashboard");
+    navigate("/boarding");
   };
 
   return (

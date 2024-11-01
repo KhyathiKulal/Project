@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Register.module.css";
+import boyAvatar from "../../assets/images/Boy.jpeg"; // Importing the image
+import girlAvatar from "../../assets/images/girl.jpeg"; // Import another image if needed
+import man from "../../assets/images/man.jpeg";
+import woman from "../../assets/images/woman.jpeg";
 
 function Register() {
   const navigate = useNavigate();
@@ -26,6 +30,10 @@ function Register() {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  const handleAvatarSelect = (avatarUrl) => {
+    setProfilePic(avatarUrl); // Set the profile picture to the selected avatar
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -33,7 +41,8 @@ function Register() {
       !formData.fullName ||
       !formData.email ||
       !formData.password ||
-      !formData.confirmPassword
+      !formData.confirmPassword ||
+      !profilePic
     ) {
       setErrors("All fields are required.");
       return;
@@ -106,62 +115,56 @@ function Register() {
 
           <div className={styles.formRight}>
             <div className={styles.profileSection}>
-              <label>Profile Picture</label>
-              <div className={styles.profilePic}>
-                {profilePic ? (
-                  <img
-                    src={profilePic}
-                    alt="Profile"
-                    className={styles.profilePreview}
-                  />
-                ) : (
-                  <div className={styles.placeholder}></div>
-                )}
+              <label className={styles.profileLabel}>Profile Picture</label>
+              <div className={styles.profilePicContainer}>
+                <div className={styles.profilePic}>
+                  {profilePic ? (
+                    <img
+                      src={profilePic}
+                      alt="Profile"
+                      className={styles.profilePreview}
+                    />
+                  ) : (
+                    <div className={styles.placeholder}></div>
+                  )}
+                </div>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleFileChange}
+                  id="file-input"
+                  style={{ display: "none" }}
+                />
+                <label htmlFor="file-input" className={styles.uploadBtn}>
+                  Upload Image
+                </label>
               </div>
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleFileChange}
-                id="file-input"
-                style={{ display: "none" }}
-              />
-              <label htmlFor="file-input" className={styles.uploadBtn}>
-                Upload Image
-              </label>
               <p className={styles.orText}>or</p>
-              <label>Select Avatar</label>
+              <label className={styles.avatarLabel}>Select Avatar</label>
               <div className={styles.avatarOptions}>
                 <img
-                  src="https://via.placeholder.com/40?text=A"
+                  src={boyAvatar}
                   alt="Avatar 1"
                   className={styles.avatar}
-                  onClick={() =>
-                    setProfilePic("https://via.placeholder.com/40?text=A")
-                  }
+                  onClick={() => handleAvatarSelect(boyAvatar)} // Set profile picture to boy avatar on click
                 />
                 <img
-                  src="https://via.placeholder.com/40?text=B"
+                  src={girlAvatar}
                   alt="Avatar 2"
                   className={styles.avatar}
-                  onClick={() =>
-                    setProfilePic("https://via.placeholder.com/40?text=B")
-                  }
+                  onClick={() => handleAvatarSelect(girlAvatar)} // Set profile picture to girl avatar on click
                 />
                 <img
-                  src="https://via.placeholder.com/40?text=C"
+                  src={man}
                   alt="Avatar 3"
                   className={styles.avatar}
-                  onClick={() =>
-                    setProfilePic("https://via.placeholder.com/40?text=C")
-                  }
+                  onClick={() => handleAvatarSelect(man)} // Set profile picture to man avatar on click
                 />
                 <img
-                  src="https://via.placeholder.com/40?text=D"
+                  src={woman}
                   alt="Avatar 4"
                   className={styles.avatar}
-                  onClick={() =>
-                    setProfilePic("https://via.placeholder.com/40?text=D")
-                  }
+                  onClick={() => handleAvatarSelect(woman)} // Set profile picture to woman avatar on click
                 />
               </div>
             </div>
