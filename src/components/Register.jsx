@@ -67,7 +67,7 @@ function Register() {
               <input
                 type="text"
                 name="fullName"
-                placeholder="name"
+                placeholder="John Smith"
                 value={formData.fullName}
                 onChange={handleChange}
               />
@@ -128,6 +128,42 @@ function Register() {
               <label htmlFor="file-input" className={styles.uploadBtn}>
                 Upload Image
               </label>
+              <p className={styles.orText}>or</p>
+              <label>Select Avatar</label>
+              <div className={styles.avatarOptions}>
+                <img
+                  src="https://via.placeholder.com/40?text=A"
+                  alt="Avatar 1"
+                  className={styles.avatar}
+                  onClick={() =>
+                    setProfilePic("https://via.placeholder.com/40?text=A")
+                  }
+                />
+                <img
+                  src="https://via.placeholder.com/40?text=B"
+                  alt="Avatar 2"
+                  className={styles.avatar}
+                  onClick={() =>
+                    setProfilePic("https://via.placeholder.com/40?text=B")
+                  }
+                />
+                <img
+                  src="https://via.placeholder.com/40?text=C"
+                  alt="Avatar 3"
+                  className={styles.avatar}
+                  onClick={() =>
+                    setProfilePic("https://via.placeholder.com/40?text=C")
+                  }
+                />
+                <img
+                  src="https://via.placeholder.com/40?text=D"
+                  alt="Avatar 4"
+                  className={styles.avatar}
+                  onClick={() =>
+                    setProfilePic("https://via.placeholder.com/40?text=D")
+                  }
+                />
+              </div>
             </div>
           </div>
         </div>

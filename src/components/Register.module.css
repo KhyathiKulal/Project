@@ -22,7 +22,7 @@ h1 {
 }
 
 .formLeft,
-.form-right {
+.formRight {
   flex: 1;
 }
 
@@ -83,12 +83,38 @@ h1 {
   transform: scale(1.05);
 }
 
+.orText {
+  margin: 10px 0; /* Add margin above and below the "or" text */
+  font-weight: bold; /* Make the "or" text bold for better visibility */
+  color: #555; /* Optional: Adjust the color for better contrast */
+}
+
+.avatarOptions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 10px; /* Add padding around the avatar options */
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.avatar:hover {
+  transform: scale(1.1); /* Slightly scale up the avatar on hover */
+}
+
 .registerBtn {
   background-color: #0f0f0f;
   color: white;
   border: none;
   border-radius: 25px;
-  padding: 12px 24px;
+  padding: 20px 24px;
   font-size: 1.1rem;
   cursor: pointer;
   margin-top: 20px;
