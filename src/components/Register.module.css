@@ -1,0 +1,148 @@
+.registerContainer {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  margin: 20px auto;
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: black;
+  margin-top: 0;
+}
+
+.formSection {
+  display: flex;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.formLeft,
+.form-right {
+  flex: 1;
+}
+
+.inputGroup {
+  margin-bottom: 15px;
+}
+
+.inputGroup label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.inputGroup input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+  font-size: 1rem;
+}
+
+.profileSection {
+  text-align: center;
+}
+
+.profilePic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #ddd;
+  overflow: hidden;
+  margin: 0 auto 10px;
+}
+
+.profilePic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.uploadBtn {
+  background-color: #0f0f0f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: inline-block;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.uploadBtn:hover {
+  background-color: #0c0c0c;
+  transform: scale(1.05);
+}
+
+.registerBtn {
+  background-color: #0f0f0f;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 100%;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.registerBtn:hover {
+  background-color: #0c0c0c;
+  transform: scale(1.05);
+}
+
+/* Responsive  */
+@media (max-width: 768px) {
+  .formSection {
+    flex-direction: column;
+  }
+
+  .formLeft,
+  .formRight {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .registerContainer {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  .profilePic {
+    width: 60px;
+    height: 60px;
+  }
+
+  .uploadBtn {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  .registerBtn {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .inputGroup input {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}

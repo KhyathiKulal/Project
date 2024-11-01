@@ -1,0 +1,143 @@
+.loginContainer {
+  display: flex;
+  max-width: 900px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.loginLeft {
+  flex: 1;
+  padding: 40px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  color: #333;
+}
+
+.inputGroup {
+  margin: 15px;
+}
+
+.inputGroup label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.inputGroup input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.forgotPassword a {
+  color: #0f0f0f;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.loginBtn {
+  background-color: #0f0f0f;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  margin-top: 20px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.loginBtn:hover {
+  background-color: #0c0c0c;
+  transform: scale(1.05);
+}
+
+.socialLogin {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.socialBtn {
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.socialBtn:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}
+
+.registerLink {
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.registerLinkText {
+  color: #0f0f0f;
+  text-decoration: none;
+}
+
+.loginRight {
+  flex: 1;
+  background-color: #0f0f0f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.characterImg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+  .loginContainer {
+    flex-direction: column;
+  }
+
+  .loginLeft {
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .loginContainer {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .loginBtn {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .inputGroup input {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}
