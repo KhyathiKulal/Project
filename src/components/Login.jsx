@@ -34,6 +34,7 @@ function Login() {
               placeholder="username@gmail.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </div>
           <div className={styles.inputGroup}>
@@ -43,6 +44,7 @@ function Login() {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
           </div>
           <div className={styles.forgotPassword}>

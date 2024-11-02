@@ -8,11 +8,11 @@ function Boarding() {
   const navigate = useNavigate();
 
   const handleJoin = () => {
-    navigate("/register"); // Navigate to the registration page
+    navigate("/join"); // Navigate to the registration page
   };
 
   const handleCreate = () => {
-    navigate("/create"); // Navigate to the create account page (you might need to create this route)
+    navigate("/canvas"); // Navigate to the create account page (you might need to create this route)
   };
 
   return (
