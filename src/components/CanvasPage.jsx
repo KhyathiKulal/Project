@@ -14,11 +14,11 @@ import {
   FaArrowLeft,
   FaDownload,
   FaFolder,
-  FaComments,
+  FaComments, // Import Chat Icon
 } from "react-icons/fa";
 
 function CanvasPage() {
-  const [isChatOpen, setIsChatOpen] = useState(true);
+  const [isChatOpen, setIsChatOpen] = useState(false); // Track chat visibility
   const [isDrawing, setIsDrawing] = useState(false);
   const [isPencilActive, setIsPencilActive] = useState(false);
   const [isErasing, setIsErasing] = useState(false);
@@ -151,6 +151,20 @@ function CanvasPage() {
     link.click(); // Trigger download
   };
 
+  // **New function to save the current work as a file**
+  const handleSave = () => {
+    const canvas = canvasRef.current;
+    const link = document.createElement("a");
+    link.href = canvas.toDataURL("image/png"); // Save the canvas as a PNG file
+    link.download = "saved_canvas.png"; // Set file name to 'saved_canvas.png'
+    link.click(); // Trigger download
+  };
+
+  // Toggle chat visibility
+  const toggleChat = () => {
+    setIsChatOpen((prev) => !prev);
+  };
+
   return (
     <div className="dashboard-container">
       {/* Sidebar */}
@@ -201,8 +215,11 @@ function CanvasPage() {
         <button className="sidebar-btn" onClick={handleDownload}>
           <FaDownload /> {/* Download Icon */}
         </button>
-        <button className="sidebar-btn">
-          <FaFolder />
+        <button className="sidebar-btn" onClick={toggleChat}>
+          <FaComments /> {/* Chat Icon */}
+        </button>
+        <button className="sidebar-btn" onClick={handleSave}>
+          <FaFolder /> {/* Save Icon */}
         </button>
       </div>
 
@@ -223,6 +240,20 @@ function CanvasPage() {
           onMouseLeave={stopDrawing}
         />
       </div>
+
+      {/* Chat Component */}
+      {isChatOpen && (
+        <div className="chat-container full-screen">
+          <div className="chat-header" onClick={toggleChat}>
+            Chat
+          </div>
+          <div className="chat-box"> {/* Chat messages here */}</div>
+          <div className="chat-input">
+            <input type="text" placeholder="Type a message..." />
+            <button className="send-btn">Send</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
